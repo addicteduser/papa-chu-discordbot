@@ -1,3 +1,4 @@
+from unicodedata import name
 import disnake
 from dotenv import load_dotenv
 from disnake.ext import commands
@@ -113,6 +114,12 @@ def embed_builder(description, image=None):
 @bot.event
 async def on_connect():
     print(f"{bot.user.name} has connected to Discord!")
+    await bot.change_presence(
+        activity=disnake.Activity(
+            name="your confessions... | /confess",
+            type=disnake.ActivityType.listening,
+        )
+    )
 
 
 @bot.event
