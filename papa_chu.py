@@ -124,5 +124,5 @@ async def on_ready():
 ## DISCORD BOT START ##
 #######################
 if __name__ == "__main__":
-    token = os.getenv("DISCORD_TOKEN")
+    token = os.getenv("PAPA_CHU_DISCORD_TOKEN")
     bot.run(token)
