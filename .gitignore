@@ -1,3 +1,8 @@
+# USER DEFINED
+test_channel.txt
+test_confessor_number.txt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
