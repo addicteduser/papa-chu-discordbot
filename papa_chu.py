@@ -1,8 +1,9 @@
-import disnake
-from dotenv import load_dotenv
-from disnake.ext import commands
 import os
 import re
+
+import disnake
+from disnake.ext import commands
+from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -78,8 +79,6 @@ def get_channel_file():
 
 
 def get_channel_id():
-    # channel_id = None
-
     try:
         with open(get_channel_file(), "r") as f:
             channel_id = int(f.read())
@@ -132,7 +131,9 @@ def embed_builder(description, image=None):
 
 
 def get_mentions(confession):
-    pattern = r"<@!\d*>"
+    # <@!xxxxx> for pc
+    # <!xxxxx> for mobile
+    pattern = r"<@!?\d*>"
     mentions = re.findall(pattern, confession)
     return " ".join(mentions)
 
